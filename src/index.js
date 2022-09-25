@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+import '../node_modules/@fortawesome/fontawesome-free/js/brands.js';
+import '../node_modules/@fortawesome/fontawesome-free/js/solid.js';
+import '../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import App from './app';
+import './views/style.css';
+
+const root = ReactDOM.createRoot(
+    document.getElementById('root')
+  );
+const element = <BrowserRouter> <App /> </BrowserRouter> ;
+root.render(element);
