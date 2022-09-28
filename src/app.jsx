@@ -31,6 +31,16 @@ class App extends Component {
     }
     this.setState({ products });
   };
+  DecrementHandler = (product) => {
+    const products = [...this.state.products];
+    const index = products.indexOf(product);
+    products[index] = { ...products[index] };
+    if (products[index].cart !== 0) {
+      products[index].cart--;
+      products[index].count++;
+    }
+    this.setState({ products });
+  };
   deleteHandler = (product) => {
     const products = [...this.state.products];
     const index = products.indexOf(product);
@@ -65,6 +75,7 @@ class App extends Component {
             <Route path="/home" element={<Home 
               products={this.state.products}
               onIncrement={this.IncrementHandler}
+              onDecrement={this.DecrementHandler}
               onDelete={this.deleteHandler}
             />} />
             <Route path="/about" element={<About />} />
@@ -73,6 +84,7 @@ class App extends Component {
                 <ShoppingCart
                   products={this.state.products}
                   onIncrement={this.IncrementHandler}
+                  onDecrement={this.DecrementHandler}
                   onDelete={this.deleteHandler}
                   total={this.cartAmount}
                 />
@@ -82,6 +94,7 @@ class App extends Component {
                 <ProductDetails 
                 products={this.state.products}
                 onIncrement={this.IncrementHandler}
+                onDecrement={this.DecrementHandler}
                 onDelete={this.deleteHandler}
                 />
             } 
@@ -90,6 +103,7 @@ class App extends Component {
               <Category 
                 products={this.state.products}
                 onIncrement={this.IncrementHandler}
+                onDecrement={this.DecrementHandler}
                 onDelete={this.deleteHandler}
               />
             } />

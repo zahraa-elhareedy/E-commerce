@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class Product extends Component {
   render() {
-    const { product, onDelete, onIncrement } = this.props;
+    const { product, onDelete, onIncrement,onDecrement } = this.props;
     return (
       <div className="container">
       <div className="row">
@@ -45,12 +45,18 @@ class Product extends Component {
           <p>Left in Stock: {product.count}</p> 
         </div>
         <div className="col">
+        <button
+            onClick={() => onDecrement(product)}
+            className="btn btn-primary btn-sm m-2"
+          >
+            <i class="fa-solid fa-minus"></i>
+          </button>
           <span>In cart: {product.cart}</span>
           <button
             onClick={() => onIncrement(product)}
             className="btn btn-primary btn-sm m-2"
           >
-            +
+            <i class="fa-solid fa-plus"></i>
           </button>
           <span
             style={{ cursor: "pointer" }}

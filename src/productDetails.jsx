@@ -15,6 +15,7 @@ const ProductDetails = props => {
           <Product
             key={product.id}
             onIncrement={props.onIncrement}
+            onDecrement={props.onDecrement}
             onDelete={props.onDelete}
             product={product}
           />
