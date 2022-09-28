@@ -5,6 +5,7 @@ class Product extends Component {
   render() {
     const { product, onDelete, onIncrement } = this.props;
     return (
+      <div className="container">
       <div className="row">
         <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-12 col-sm-6">
         <div className="properties pb-30">
@@ -41,7 +42,10 @@ class Product extends Component {
         </div>
         </div>
         <div className="col">
-          <span>{product.cart}</span>
+          <p>Left in Stock: {product.count}</p> 
+        </div>
+        <div className="col">
+          <span>In cart: {product.cart}</span>
           <button
             onClick={() => onIncrement(product)}
             className="btn btn-primary btn-sm m-2"
@@ -56,6 +60,7 @@ class Product extends Component {
             <i className="fa-solid fa-trash m-2"></i>
           </span>
         </div>
+      </div>
       </div>
     );
   }

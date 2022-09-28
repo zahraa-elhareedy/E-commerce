@@ -5,9 +5,9 @@ const Navbar = props => {
   return (
     <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/home">
-          <img src="./assets/logo.png" alt="" id="logo" />
-        </a>
+        <Link className="navbar-brand" to="/home">
+          <img src="/assets/logo.png" alt="" id="logo" />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

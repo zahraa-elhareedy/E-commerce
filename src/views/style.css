@@ -8,7 +8,7 @@
 .text-center {
     text-align: center !important;
 }
-.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-8, .col-sm-12, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-8, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-6, .col-xl-8{
+.col .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-8, .col-sm-12, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-8, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-6, .col-xl-8{
     position: relative;
     width: 100%;
 }
@@ -61,6 +61,25 @@
 .category-listing .single-listing .select-Categories .container input:checked ~ .checkmark {
     background-color: #FF1616;
     border: 2px solid transparent;
+}
+.category-listing .single-listing .select-Categories .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.category-listing .single-listing .select-Categories .container input:checked ~ .checkmark:after {
+    display: block;
+}
+.category-listing .single-listing .select-Categories .container .checkmark::after {
+    left: 6px;
+    top: 2px;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 .best-selling {
     padding-top: 95px;

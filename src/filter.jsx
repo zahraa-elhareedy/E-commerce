@@ -3,11 +3,21 @@ import { Link } from 'react-router-dom';
 
 const Filter = props => {
     const[products, setProduct] = useState(props.products);
-    const filterResults = (catItem) => {
-        const result = props.products.filter((curDate) => {
-            return curDate.category === catItem;
+    const filterResults = (e) => {
+        var boxes = document.querySelectorAll('input[value][type="checkbox"]:not([value=""])');
+        for(var box of boxes)
+        { 
+            if(e.target.value !== box.value && box.checked)
+                box.checked = !box.checked;
+        }
+        if( e.target.checked ){
+            const filterResult = props.products.filter((curDate) => {
+                return curDate.category === e.target.value;
         });
-        setProduct(result); 
+            setProduct(filterResult);
+        }else{
+            setProduct(props.products);
+        } 
     }
     return (
         <React.Fragment>
@@ -25,28 +35,24 @@ const Filter = props => {
                                         <div className="small-tittle mb-20">
                                             <h4>Filter by Genres</h4>
                                         </div>
-                                        <label className="container">All
-                                            <input type="checkbox" onClick={() => setProduct(props.products)}/>
-                                                <span className="checkmark"></span>
-                                        </label>
                                         <label className="container">Fiction
-                                            <input type="checkbox"  onClick={() => filterResults("Fiction")}/>
+                                            <input type="checkbox" value="Fiction" onChange={filterResults}/>
                                                 <span className="checkmark"></span>
                                         </label>
                                         <label className="container">Thriller
-                                            <input type="checkbox"  onClick={() => filterResults("Thriller")}/>
+                                            <input type="checkbox" value="Thriller" onChange={filterResults}/>
                                                 <span className="checkmark"></span>
                                         </label>
                                         <label className="container">Romance
-                                            <input type="checkbox"  onClick={() => filterResults("Romance")}/>
+                                            <input type="checkbox" value="Romance" onChange={filterResults}/>
                                                 <span className="checkmark"></span>
                                         </label>
                                         <label className="container">Science Fiction
-                                            <input type="checkbox"  onClick={() => filterResults("Science Fiction")}/>
+                                            <input type="checkbox" value="Science Fiction" onChange={filterResults}/>
                                                 <span className="checkmark"></span>
                                         </label>
                                         <label className="container">Biography
-                                            <input type="checkbox"  onClick={() => filterResults("Biography")}/>
+                                            <input type="checkbox" value="Biography" onChange={filterResults}/>
                                                 <span className="checkmark"></span>
                                         </label>
                                     </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 class Footer extends Component {
     state = {};
@@ -15,7 +16,7 @@ class Footer extends Component {
                                             <div className="single-footer-caption mb-30">
 
                                                 <div className="footer-logo mb-25">
-                                                    <a href="/home"><img src="./assets/logo.png" alt="" id="logo" /></a>
+                                                    <Link to="/home"><img src="/assets/logo.png" alt="" id="logo" /></Link>
                                                 </div>
                                                 <div className="footer-tittle">
                                                     <div className="footer-pera">
@@ -24,9 +25,9 @@ class Footer extends Component {
                                                 </div>
 
                                                 <div className="footer-social">
-                                                    <a href="/"><i className="fa-brands fa-square-facebook"></i></a>
-                                                    <a href="/"><i className="fa-brands fa-instagram"></i></a>
-                                                    <a href="/"><i className="fa-brands fa-twitter"></i></a>
+                                                    <Link to="/facebook"><i className="fa-brands fa-square-facebook"></i></Link>
+                                                    <Link to="/instagram"><i className="fa-brands fa-instagram"></i></Link>
+                                                    <Link to="/twitter"><i className="fa-brands fa-twitter"></i></Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -36,11 +37,11 @@ class Footer extends Component {
                                             <div className="footer-tittle">
                                                 <h4>Book Category</h4>
                                                 <ul>
-                                                    <li><a href="/">Fiction</a></li>
-                                                    <li><a href="/">Thriller</a></li>
-                                                    <li><a href="/">Romance</a></li>
-                                                    <li><a href="/">Science Fiction</a></li>
-                                                    <li><a href="/">Biography</a></li>
+                                                    <li><Link to="/category/Fiction">Fiction</Link></li>
+                                                    <li><Link to="/category/Thriller">Thriller</Link></li>
+                                                    <li><Link to="/category/Romance">Romance</Link></li>
+                                                    <li><Link to="/category/Science Fiction">Science Fiction</Link></li>
+                                                    <li><Link to="/category/Biography">Biography</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -50,11 +51,11 @@ class Footer extends Component {
                                             <div className="footer-tittle">
                                                 <h4>&nbsp;</h4>
                                                 <ul>
-                                                    <li><a href="/">Business</a></li>
-                                                    <li><a href="/">Astrology</a></li>
-                                                    <li><a href="/">Digital Marketing</a></li>
-                                                    <li><a href="/">Software Development</a></li>
-                                                    <li><a href="/">Ecommerce</a></li>
+                                                    <li><Link to="/category/Business">Business</Link></li>
+                                                    <li><Link to="/category/Astrology">Astrology</Link></li>
+                                                    <li><Link to="/category/Digital Marketing">Digital Marketing</Link></li>
+                                                    <li><Link to="/category/Software Development">Software Development</Link></li>
+                                                    <li><Link to="/category/Ecommerce">Ecommerce</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -64,9 +65,9 @@ class Footer extends Component {
                                             <div className="footer-tittle">
                                                 <h4>Site Map</h4>
                                                 <ul className="mb-20">
-                                                    <li><a href="/home">Home</a></li>
-                                                    <li><a href="/about">About Us</a></li>
-                                                    <li><a href="/contact">Contact</a></li>
+                                                    <li><Link to="/home">Home</Link></li>
+                                                    <li><Link to="/about">About Us</Link></li>
+                                                    <li><Link to="/contact">Contact</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
